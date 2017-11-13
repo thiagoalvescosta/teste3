@@ -1,0 +1,404 @@
+{
+	"auth": {
+		"customId": "auth",
+		"queryName": "Autenticar",
+		"screen": "",
+		"sourceType": "entityFullName",
+		"blockly": null,
+		"entitySimpleName": "User",
+		"entityFullName": "app.entity.User",
+		"query": "select o from User o where o.login = :login",
+		"queryParamsValues": [
+			{
+				"fieldName": "login",
+				"fieldValue": ""
+			}
+		],
+		"verbs": {
+			"GET": false,
+			"GETAuthorities": null,
+			"POST": false,
+			"POSTAuthorities": null,
+			"PUT": false,
+			"PUTAuthorities": null,
+			"DELETE": false,
+			"DELETEAuthorities": null
+		},
+		"events": {
+			"beforeInsert": null,
+			"beforeUpdate": null,
+			"beforeDelete": null,
+			"afterInsert": null,
+			"afterUpdate": null,
+			"afterDelete": null,
+			"onNavigate": null,
+			"onGetData": null
+		},
+		"defaultValues": {
+			"id": null,
+			"email": null,
+			"name": null,
+			"login": null,
+			"picture": null,
+			"password": null,
+			"theme": null
+		},
+		"security": {
+			"id": null,
+			"email": null,
+			"name": null,
+			"login": null,
+			"picture": null,
+			"password": null,
+			"theme": null
+		},
+		"errorHandles": {
+			"primaryKey": null,
+			"foreignKey": null
+		},
+		"serviceUrl": "api/cronapi/query/auth/"
+	},
+	"roles": {
+		"customId": "roles",
+		"queryName": "Obter Autorização",
+		"screen": "",
+		"sourceType": "entityFullName",
+		"blockly": null,
+		"entitySimpleName": "Role",
+		"entityFullName": "app.entity.Role",
+		"query": "select o.id from Role o where o.user.login = :login",
+		"queryParamsValues": [
+			{
+				"fieldName": "login",
+				"fieldValue": ""
+			}
+		],
+		"verbs": {
+			"GET": false,
+			"GETAuthorities": null,
+			"POST": false,
+			"POSTAuthorities": null,
+			"PUT": false,
+			"PUTAuthorities": null,
+			"DELETE": false,
+			"DELETEAuthorities": null,
+			"FILTER": true,
+			"FILTERAuthorities": null
+		},
+		"events": {
+			"beforeInsert": null,
+			"beforeUpdate": null,
+			"beforeDelete": null,
+			"afterInsert": null,
+			"afterUpdate": null,
+			"afterDelete": null,
+			"onNavigate": null,
+			"onGetData": null
+		},
+		"defaultValues": {
+			"id": null,
+			"user": null
+		},
+		"security": {
+			"id": null,
+			"user": null
+		},
+		"calcFields": {},
+		"calcFieldsSecurity": {},
+		"errorHandles": {
+			"primaryKey": null,
+			"foreignKey": null
+		},
+		"serviceUrl": "api/cronapi/query/roles/"
+	},
+	"tenant": {
+		"customId": "tenant",
+		"queryName": "Obter Id de Multi-inquilino",
+		"screen": "",
+		"sourceType": "entityFullName",
+		"blockly": null,
+		"entitySimpleName": "User",
+		"entityFullName": "app.entity.User",
+		"query": "select u.company.id from User u where u.login = :login",
+		"queryParamsValues": [
+			{
+				"fieldName": "login",
+				"fieldValue": ""
+			}
+		],
+		"verbs": {
+			"GET": false,
+			"GETAuthorities": null,
+			"POST": false,
+			"POSTAuthorities": null,
+			"PUT": false,
+			"PUTAuthorities": null,
+			"DELETE": false,
+			"DELETEAuthorities": null
+		},
+		"events": {
+			"beforeInsert": null,
+			"beforeUpdate": null,
+			"beforeDelete": null,
+			"afterInsert": null,
+			"afterUpdate": null,
+			"afterDelete": null,
+			"onNavigate": null,
+			"onGetData": null
+		},
+		"defaultValues": {
+			"id": null,
+			"email": null,
+			"name": null,
+			"login": null,
+			"picture": null,
+			"password": null,
+			"theme": null
+		},
+		"security": {
+			"id": null,
+			"email": null,
+			"name": null,
+			"login": null,
+			"picture": null,
+			"password": null,
+			"theme": null
+		},
+		"errorHandles": {
+			"primaryKey": null,
+			"foreignKey": null
+		},
+		"serviceUrl": "api/cronapi/query/tenant/"
+	},
+	"1hrmhnwxkvy2f": {
+		"customId": "departamentos",
+		"queryName": "Todos os Departamentos",
+		"screen": "src/main/webapp/views/logged/department.view.html",
+		"sourceType": "entityFullName",
+		"blockly": null,
+		"entitySimpleName": "Department",
+		"entityFullName": "app.entity.Department",
+
+		"query": {
+          "multiTenant": true,
+			"isValid": true,
+			"rulesEntity": [
+				{
+					"entity": "Department",
+					"alias": "u12"
+				}
+			],
+			"rulesSelect": [
+				{
+					"func": "get",
+					"field": "u12"
+				}
+			],
+			"rulesGroupBy": [],
+			"rulesHaving": [],
+			"rulesOrderBy": [],
+			"rules": {
+				"condition": "AND",
+				"not": false,
+				"valid": true,
+				"rules": []
+			}
+		},
+		"queryParamsValues": [],
+		"verbs": {
+			"GET": true,
+			"GETAuthorities": null,
+			"POST": true,
+			"POSTAuthorities": null,
+			"PUT": true,
+			"PUTAuthorities": null,
+			"DELETE": true,
+			"DELETEAuthorities": null,
+			"FILTER": true,
+			"FILTERAuthorities": null
+		},
+		"events": {
+			"beforeInsert": null,
+			"beforeUpdate": null,
+			"beforeDelete": null,
+			"afterInsert": null,
+			"afterUpdate": null,
+			"afterDelete": null,
+			"onNavigate": null,
+			"onGetData": null
+		},
+		"defaultValues": {
+			"id": null,
+			"name": null,
+			"company": null
+		},
+		"security": {
+			"id": null,
+			"name": null,
+			"company": null
+		},
+		"calcFields": {},
+		"calcFieldsSecurity": {},
+		"errorHandles": {
+			"primaryKey": null,
+			"foreignKey": null
+		},
+		"serviceUrl": "api/cronapi/query/1hrmhnwxkvy2f/"
+	}
+
+,
+  "geral": {
+    "customId": "departamentos",
+    "queryName": "Todos os Departamentos",
+    "screen": "src/main/webapp/views/logged/department.view.html",
+    "sourceType": "entityFullName",
+    "blockly": null,
+    "entitySimpleName": "Department",
+    "entityFullName": "app.entity.Department",
+
+    "query": {
+      "multiTenant": false,
+      "isValid": true,
+      "rulesEntity": [
+        {
+          "entity": "Department",
+          "alias": "u12"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "u12"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "not": false,
+        "valid": true,
+        "rules": []
+      }
+    },
+    "queryParamsValues": [],
+    "verbs": {
+      "GET": true,
+      "GETAuthorities": null,
+      "POST": true,
+      "POSTAuthorities": null,
+      "PUT": true,
+      "PUTAuthorities": null,
+      "DELETE": true,
+      "DELETEAuthorities": null,
+      "FILTER": true,
+      "FILTERAuthorities": null
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onGetData": null
+    },
+    "defaultValues": {
+      "id": null,
+      "name": null,
+      "company": null
+    },
+    "security": {
+      "id": null,
+      "name": null,
+      "company": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/query/1hrmhnwxkvy2f/"
+  }
+
+  ,
+
+
+  "usuarios": {
+    "customId": "usuarios",
+    "queryName": "Todos os Usuarios",
+    "screen": "src/main/webapp/views/logged/department.view.html",
+    "sourceType": "entityFullName",
+    "blockly": null,
+    "entitySimpleName": "User",
+    "entityFullName": "app.entity.User",
+
+    "query": {
+      "multiTenant": false,
+      "isValid": true,
+      "rulesEntity": [
+        {
+          "entity": "User",
+          "alias": "u12"
+        }
+      ],
+      "rulesSelect": [
+        {
+          "func": "get",
+          "field": "u12"
+        }
+      ],
+      "rulesGroupBy": [],
+      "rulesHaving": [],
+      "rulesOrderBy": [],
+      "rules": {
+        "condition": "AND",
+        "not": false,
+        "valid": true,
+        "rules": []
+      }
+    },
+    "queryParamsValues": [],
+    "verbs": {
+      "GET": true,
+      "GETAuthorities": ["permitAll"],
+      "POST": true,
+      "POSTAuthorities": null,
+      "PUT": true,
+      "PUTAuthorities": null,
+      "DELETE": true,
+      "DELETEAuthorities": null,
+      "FILTER": true,
+      "FILTERAuthorities": null
+    },
+    "events": {
+      "beforeInsert": null,
+      "beforeUpdate": null,
+      "beforeDelete": null,
+      "afterInsert": null,
+      "afterUpdate": null,
+      "afterDelete": null,
+      "onNavigate": null,
+      "onGetData": null
+    },
+    "defaultValues": {
+      "id": null,
+      "name": null,
+      "company": null
+    },
+    "security": {
+      "id": null,
+      "name": null,
+      "company": null
+    },
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "errorHandles": {
+      "primaryKey": null,
+      "foreignKey": null
+    },
+    "serviceUrl": "api/cronapi/query/usuarios/"
+  }
+}
