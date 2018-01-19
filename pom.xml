@@ -219,7 +219,7 @@
         <dependency>
             <groupId>io.cronapp</groupId>
             <artifactId>cronapp-reports-exec</artifactId>
-            <version>0.0.16-d-s-b</version>
+            <version>0.0.17-d-s-b</version>
         </dependency>
     </dependencies>
     <properties>
