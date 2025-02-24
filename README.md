@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Introduçãoererrr
+=======
+# Introdução 132343
+>>>>>>> branch 'master' of https://github.com/thiagoalvescosta/teste3.git
 
 Esta é uma aplicação criada com o CronApp IDE.
 
